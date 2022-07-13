@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
            <link rel="canonical" href="/Register" />
+       <%-- Pagination--%>
 
     <meta name="description" content="Register now and create a account" />
      <script src="https://www.google.com/recaptcha/api.js?onload=renderRecaptcha&render=explicit" async defer></script>  
@@ -34,7 +35,7 @@
     });  
   
     </script>  
-   <%-- <h2><%: Title %>.</h2>--%>
+       <%-- Links and redirects in menu bar--%>
         <!-- BEGIN PAGE TITLE/BREADCRUMB -->
 		<div class="parallax colored-bg pattern-bg" data-stellar-background-ratio="0.5">
 			<div class="container">
@@ -56,6 +57,7 @@
 			<div class="container">
 				<div class="row">
 				
+                     <%-- Textbox fields to Create a new account--%>
 					<!-- BEGIN MAIN CONTENT -->
 					<div class="main col-sm-12">
     <div class="form-horizontal">
@@ -70,6 +72,7 @@
                     CssClass="text-danger" ErrorMessage="The email field is required." />
             </div>
         </div>
+                <%-- Textbox fields to Input First Name--%>
         <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="txtFirstname" CssClass="col-md-2 control-label">First Name</asp:Label>
             <div class="col-md-10 col-lg-6">
@@ -78,6 +81,7 @@
                     CssClass="text-danger" ErrorMessage="The first name field is required." />
             </div>
         </div>
+              <%-- Textbox fields to Input Surname--%>
         <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="txtSurname" CssClass="col-md-2 control-label">Surname</asp:Label>
             <div class="col-md-10 col-lg-6">
@@ -86,6 +90,8 @@
                     CssClass="text-danger" ErrorMessage="The surname field is required." />
             </div>
         </div>
+               <%-- Textbox fields to Input Cellphone number--%>
+
          <div class="form-group">
              <asp:Label runat="server" AssociatedControlID="txtCellphone" CssClass="col-md-2 control-label">Cellphone</asp:Label>
               <asp:RequiredFieldValidator runat="server" ControlToValidate="txtCellphone"
@@ -95,6 +101,7 @@
                  <asp:TextBox runat="server" ID="txtCellphone" CssClass="form-control" TextMode="SingleLine" />
                  </div>
          </div>
+               <%-- Textbox fields to Input Password--%>
         <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="Password" CssClass="col-md-2 control-label">Password</asp:Label>
             
@@ -104,6 +111,7 @@
                     CssClass="text-danger" ErrorMessage="The password is required." />
             </div>
         </div>
+             <%-- Textbox fields to Confirm Password--%>
         <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="ConfirmPassword" CssClass="col-md-2 control-label">Confirm password</asp:Label>
             <div class="col-md-10 col-lg-6">
@@ -119,6 +127,7 @@
                 <div id="ReCaptchContainer"></div>  
                    <label style="font-weight:100" id="lblMessage" runat="server" clientidmode="static"></label>  
                 </div>
+                <%-- Bitton to confirm registration details--%>
             <div class="col-md-offset-2 col-md-10">
                 <asp:Button runat="server" ID="RegisterDone" OnClick="CreateUser_Click" Text="Register" class="btn btn-fullcolor" />
 

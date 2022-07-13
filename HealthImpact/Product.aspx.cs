@@ -19,6 +19,8 @@ namespace HealthImpact
         public void SaveProduct_Click(object sender, EventArgs e)
         {
             HealthImpactEntities hp = new HealthImpactEntities();
+            
+            //Retrieving input data from from end input and saving to Database
             var productDetails = new ProductTable
             {
                 BatchNumber = Convert.ToInt32(txtBatchNumber.Text),
@@ -29,6 +31,7 @@ namespace HealthImpact
                 CostPrice = Convert.ToDouble(txtCostPrice.Text),
             };
 
+            //Saving Data instantiated object to the Database
             hp.ProductTables.Add(productDetails);
             hp.SaveChanges();
             hp.Dispose();                       
@@ -36,9 +39,9 @@ namespace HealthImpact
 
         public void ProductReport_Click(object sender, EventArgs e)
         {
-            //int numb = Convert.ToInt32(txtBatchNumber.Text.Trim());
+            //Redirecting to ProductReport page
+            //Parsing through the Product name to the ProductReport page, so the Product Report will be generated from the user input Product Name.
             Response.Redirect("/ProductReport.aspx?name=" + ProductName.Text + " ");
-            //Response.Redirect("/ProductReport.aspx?name='" + ProductName.Text + "' ");
         }
     }
 }

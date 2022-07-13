@@ -29,6 +29,8 @@
                             <asp:Literal runat="server" ID="FailureText" />
                         </p>
                     </asp:PlaceHolder>
+
+                   <%-- Email Textbox and Label--%>
                     <div class="form-group">
                         <asp:Label runat="server" AssociatedControlID="Email" CssClass="col-md-2 control-label">Email</asp:Label>
                         <div class="col-md-10">
@@ -37,6 +39,7 @@
                                 CssClass="text-danger" ErrorMessage="The email field is required." />
                         </div>
                     </div>
+                   <%-- Password Textbox and Label--%>
                     <div class="form-group">
                         <asp:Label runat="server" AssociatedControlID="Password" CssClass="col-md-2 control-label">Password</asp:Label>
                         <div class="col-md-10">
@@ -44,6 +47,7 @@
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="Password" CssClass="text-danger" ErrorMessage="The password field is required." />
                         </div>
                     </div>
+                   <%-- Remember Me checkbox--%>
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
                             <div class="checkbox">
@@ -52,6 +56,7 @@
                             </div>
                         </div>
                     </div>
+                     <%-- Log In Button--%>
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
                             <asp:Button runat="server" OnClick="LogIn" Text="Log in" class="btn btn-fullcolor"/>

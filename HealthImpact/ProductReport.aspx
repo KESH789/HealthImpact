@@ -4,6 +4,7 @@
 
 <br />
                 <br />
+                  <%-- Gridview that retrieves information from the back end to output Product details in Gridview--%>
                 <asp:GridView ID="GridView1" runat="server" Height="160px" Width="1200px" HeaderStyle-BackColor="#3AC0F2" HeaderStyle-ForeColor="White"
     RowStyle-BackColor="#A1DCF2" AlternatingRowStyle-BackColor="White" AlternatingRowStyle-ForeColor="#000"
      >

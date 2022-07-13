@@ -13,23 +13,28 @@ namespace HealthImpact
         protected void Page_Load(object sender, EventArgs e)
         {
             GridView1.Visible = true;
+            //Retrieving entered Product Name from the Product.aspx page
              string name = Request.QueryString["name"].ToString();
            
             HealthImpactEntities hp = new HealthImpactEntities();
              
+            //Searching for the product details by Product Name
             var productDetails = (from p in hp.ProductTables 
                                   where p.Product.ToString() == name
                                   //where p.BatchNumber == 12391
                                   select p).FirstOrDefault();
-                                  //select p).SingleOrDefault();
             if (!IsPostBack)
             {
+                //Creating DataTable and adding GridView elements to object
                 DataTable dt = new DataTable();
+                //Specifying Title of Gridview Columns
                 dt.Columns.AddRange(new DataColumn[6] { new DataColumn("batchNumber"), new DataColumn("productName"), new DataColumn("quantity")
                                   , new DataColumn("manufacturingDate"), new DataColumn("supplier"), new DataColumn("costPrice")});
+                //Specifying values for each Gridview Column
                 dt.Rows.Add(productDetails.BatchNumber, productDetails.Product, productDetails.Quantity, productDetails.ManufacturingDate,
                             productDetails.Supplier, productDetails.CostPrice);
 
+                //Binding GridView data to the Front end ProductReport.aspx
                 GridView1.DataSource = dt;
                 GridView1.DataBind();
             }

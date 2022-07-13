@@ -21,6 +21,7 @@ namespace HealthImpact
         {
             HealthImpactEntities hp = new HealthImpactEntities();
 
+            //Saving Registration details to a Object
             var userDetails = new UserTable { 
                 Email = Email.Text, 
                 FirstName = txtFirstname.Text, 
@@ -28,10 +29,13 @@ namespace HealthImpact
                 Cellphone = txtCellphone.Text.Trim(),
                 Password = Password.Text,
             };
+
+            //Saving the created object to the Database
             hp.UserTables.Add(userDetails);
             hp.SaveChanges();
             hp.Dispose();
 
+            //Redirecting to Product Page
             Response.Redirect("/Product.aspx", true);
           }
     }

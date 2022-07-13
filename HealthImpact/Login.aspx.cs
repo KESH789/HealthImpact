@@ -17,6 +17,7 @@ namespace HealthImpact
                 var returnUrl = HttpUtility.UrlEncode(Request.QueryString["ReturnUrl"]);
                 if (!String.IsNullOrEmpty(returnUrl))
                 {
+                //Redirects from Login Page to Product Page
                     RegisterHyperLink.NavigateUrl += "?ReturnUrl=/Product.aspx" ;
                 }            
         }
@@ -25,21 +26,26 @@ namespace HealthImpact
         {
             if (IsValid)
             { 
+                //Database intilialization and object instantiation
                 HealthImpactEntities hp = new HealthImpactEntities();
                 string email = Email.Text.Trim();
                 string password = Password.Text.Trim();
 
+                //Retrieving User Login details from User Table
                 var thisuser = (from u in hp.UserTables
                                 where u.Email == Email.Text
                                 select u).FirstOrDefault();
 
+                //Validating User Login input
                 if (thisuser.ToString() == string.Empty)
                 {
+                    //If Login failed, User will be redirected to the Register Page
                     Response.Redirect("/Register.aspx", true);
                 }
 
                 else if ( password == thisuser.Password)
                 {
+                    //If Login Successful, User will be redirected to the Product Page
                     Response.Redirect("/Product.aspx", true);
                 }
             }                      
