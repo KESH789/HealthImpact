@@ -32,9 +32,17 @@
                  
               <%-- Textbox fields to Product name--%>
 
-        <asp:ValidationSummary runat="server" CssClass="col-md-2 control-label" />
+         <%--<asp:ValidationSummary runat="server" CssClass="col-md-2 control-label" />
         <div class="form-group">
             <asp:Label runat="server" CssClass="col-md-2 control-label">Product Name</asp:Label>
+            <div class="col-md-10 col-lg-6">
+                <asp:TextBox runat="server" ID="TextBox1" CssClass="form-control" TextMode="SingleLine" />
+              </div>
+        </div>--%>
+
+        <asp:ValidationSummary runat="server" CssClass="col-md-2 control-label" />
+        <div class="form-group">
+            <asp:Label runat="server" AssociatedControlID="ProductName" CssClass="col-md-2 control-label">Product Name</asp:Label>
             <div class="col-md-10 col-lg-6">
                 <asp:TextBox runat="server" ID="ProductName" CssClass="form-control" TextMode="SingleLine" />
               </div>

@@ -36,7 +36,7 @@ namespace HealthImpact
             hp.Dispose();
 
             //Redirecting to Product Page
-            Response.Redirect("/Product.aspx", true);
+            Response.Redirect("/Login.aspx", true);
           }
     }
 }
