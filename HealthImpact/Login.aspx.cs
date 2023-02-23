@@ -22,6 +22,7 @@ namespace HealthImpact
                 }            
         }
 
+        [Obsolete]
         protected void LogIn(object sender, EventArgs e)
         {
             if (IsValid)
@@ -39,8 +40,13 @@ namespace HealthImpact
                 //Validating User Login input
                 if (thisuser.ToString() == string.Empty)
                 {
+                    LoginWrong.Text = "Your Password and/or email are incorrect";
+                    Email.Text = "";
+                    Password.Text = "";
+                    Page.RegisterStartupScript("Alert Message", "<script language='javascript'>alert('username and password is incorrect try again');</script>");
+
                     //If Login failed, User will be redirected to the Register Page
-                    Response.Redirect("/Register.aspx", true);
+                    //Response.Redirect("/Register.aspx", true);
                 }
 
                 else if ( password == thisuser.Password)

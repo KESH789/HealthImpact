@@ -28,8 +28,8 @@ namespace HealthImpact
                 //Creating DataTable and adding GridView elements to object
                 DataTable dt = new DataTable();
                 //Specifying Title of Gridview Columns
-                dt.Columns.AddRange(new DataColumn[6] { new DataColumn("batchNumber"), new DataColumn("productName"), new DataColumn("quantity")
-                                  , new DataColumn("manufacturingDate"), new DataColumn("supplier"), new DataColumn("costPrice")});
+                dt.Columns.AddRange(new DataColumn[6] { new DataColumn(" Batch Number"), new DataColumn(" Product Name"), new DataColumn(" Quantity")
+                                , new DataColumn(" Manufacturing Date"), new DataColumn(" Supplier"), new DataColumn(" Cost Price")});
                 //Specifying values for each Gridview Column
                 dt.Rows.Add(productDetails.BatchNumber, productDetails.Product, productDetails.Quantity, productDetails.ManufacturingDate,
                             productDetails.Supplier, productDetails.CostPrice);
